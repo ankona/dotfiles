@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 echo "Installing packages..."
@@ -12,6 +11,7 @@ brew install gcc
 brew install gemini-cli
 brew install gitkraken-cli
 brew install --cask iterm2
+brew install --cask lm-studio
 brew install make
 brew install --cask miniconda
 brew install monitorcontrol
@@ -21,12 +21,3 @@ brew install open-mpi
 brew install pyenv
 brew install redis
 brew install tmux
-
-brew services start redis
-
-
-# if [[ ! -e "{{ .chezmoi.homeDir }}/.pyenv" ]]; then
-#     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-# else
-#     echo "pyenv is already installed."
-# fi;

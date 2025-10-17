@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 echo "Creating source directories..."
@@ -8,13 +7,13 @@ mkdir -p "{{ .chezmoi.homeDir }}/code"
 echo "Cloning repositories..."
 
 if [[ ! -e "{{ .chezmoi.homeDir }}/code/cstar" ]]; then
-    git clone --single-branch --branch chris git@github.com:ankona/C-Star.git "{{ .chezmoi.homeDir }}/code/cstar"
+    git clone git@github.com:ankona/C-Star.git "{{ .chezmoi.homeDir }}/code/cstar"
 else
     echo "C-Star repository exists."
 fi;
 
 if [[ ! -e "{{ .chezmoi.homeDir }}/.config/nvim" ]]; then
-    git clone git@github.com:ankona/https://github.com/ankona/kickstart.nvim "{{ .chezmoi.homeDir }}/.config/nvim"
+    git clone --single-branch --branch chris git@github.com:ankona/kickstart.nvim "{{ .chezmoi.homeDir }}/.config/nvim"
 else
     echo "Neovim configuration repository exists."
 fi;
