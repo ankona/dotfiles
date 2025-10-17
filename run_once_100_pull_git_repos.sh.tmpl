@@ -8,7 +8,7 @@ mkdir -p "{{ .chezmoi.homeDir }}/code"
 echo "Cloning repositories..."
 
 if [[ ! -e "{{ .chezmoi.homeDir }}/code/cstar" ]]; then
-    git clone git@github.com:ankona/C-Star.git "{{ .chezmoi.homeDir }}/code/cstar"
+    git clone --single-branch --branch chris git@github.com:ankona/C-Star.git "{{ .chezmoi.homeDir }}/code/cstar"
 else
     echo "C-Star repository exists."
 fi;
